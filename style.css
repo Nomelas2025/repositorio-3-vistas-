@@ -1,0 +1,71 @@
+/* ==========================================================
+   ESTILOS BASE (VISTA MÓVIL)
+   ========================================================== */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+/* Contenedor principal flex para permitir que los divs se acomoden al lado del otro */
+.container, main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 15px;
+}
+
+/* Estilo base de los divs en móvil (1 columna / ancho completo) */
+.container > div, 
+.card, 
+div {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* Imágenes responsivas base */
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+
+/* ==========================================================
+   CONSULTA #1: VISTA DE TABLETA (772px)
+   ========================================================== */
+@media screen and (min-width: 772px) {
+  /* Cambio a 2 divs horizontales por fila (45% de ancho) */
+  .container > div, 
+  .card, 
+  div {
+    width: 45%;
+    display: inline-block;
+  }
+
+  /* Las imágenes no superan el 30% de la altura de la ventana (30vh) */
+  img {
+    max-height: 30vh;
+    width: auto;
+  }
+}
+
+
+/* ==========================================================
+   CONSULTA #2: VISTA DE PANTALLA GRANDE (998px)
+   ========================================================== */
+@media screen and (min-width: 998px) {
+  /* Cambio a 3 divs horizontales por fila (30% de ancho) */
+  .container > div, 
+  .card, 
+  div {
+    width: 30%;
+  }
+}
